@@ -1,245 +1,70 @@
 <!doctype html>
-<html lang="en" class="is-booting">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>GIREESH — Artist · Creative · Storyteller</title>
-<meta name="description" content="Welcome to my world. Portfolio of Gireesh — artist, creative, storyteller.">
-<meta name="theme-color" content="#000000">
-
-<link rel="preload" href="public/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="public/fonts/oswald-500.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="public/fonts/oswald-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="src/styles/app.css">
-<link rel="stylesheet" href="src/styles/universe.css">
-<link rel="stylesheet" href="src/styles/chrono.css">
-<link rel="stylesheet" href="src/styles/projects.css">
-<link rel="stylesheet" href="src/styles/finale.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Ravi Yadav — Gen AI creative technologist building cinematic, intelligent digital experiences.">
+  <meta property="og:title" content="Ravi Yadav — Gen AI Creative Technologist">
+  <meta property="og:description" content="A cinematic portfolio for AI, creative technology and digital experiments.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>RAVI YADAV — Gen AI / Creative Technology</title>
+  <link rel="stylesheet" href="src/ravi.css">
 </head>
 <body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span></span></div>
 
-<!-- the real heading, for search engines and screen readers; the visible
-     wordmark is drawn on the canvas so video can be clipped inside its letters -->
-<h1 class="sr-only">GIREESH — Artist, Creative, Storyteller. Welcome to my world.</h1>
-
-<div class="stage-wrap">
-  <canvas id="stage" aria-hidden="true"></canvas>
-
-  <!-- ------------------------------------------------------------------ -->
-  <header class="hdr" id="hdr">
-    <svg class="hdr__rule" id="hdrRule" aria-hidden="true" preserveAspectRatio="none">
-      <polyline id="hdrRulePath" fill="none" stroke="currentColor" stroke-width="1.25"
-                vector-effect="non-scaling-stroke"/>
-    </svg>
-
-    <a class="hdr__mark" href="#" aria-label="Gireesh, home">
-      <span class="mark-word">GIREESH</span>
-    </a>
-
-    <span class="hdr__div" aria-hidden="true"></span>
-
-    <p class="hdr__roles">
-      <span>Artist</span><span>Creative</span><span>Storyteller</span>
-    </p>
-
-    <nav class="hdr__nav" aria-label="Primary">
-      <ul>
-        <li><a href="#" class="is-active" data-nav>Home</a></li>
-        <li><a href="#" data-nav>Work</a></li>
-        <li><a href="#" data-nav>About</a></li>
-        <li><a href="#" data-nav>Journal</a></li>
-        <li><a href="#" data-nav>Contact</a></li>
-      </ul>
+  <header class="nav" id="top">
+    <a class="brand" href="#top" aria-label="Ravi Yadav home"><span>RY</span><b>RAVI YADAV</b></a>
+    <nav aria-label="Primary navigation">
+      <a href="#work">Work</a><a href="#about">About</a><a href="#lab">Lab</a><a href="#contact">Contact</a>
     </nav>
-
-    <div class="hdr__meta">
-      <span class="hdr__metaLabel">Portfolio — MMXXVI</span>
-      <span class="hdr__pips" aria-hidden="true"><i></i><i></i><i></i></span>
-    </div>
-
-    <button class="hdr__burger" id="burger" aria-expanded="false" aria-controls="hdrNavMobile">
-      <span aria-hidden="true"></span><span aria-hidden="true"></span>
-      <span class="sr-only">Menu</span>
-    </button>
+    <button class="menu" aria-expanded="false" aria-controls="mobileNav"><i></i><i></i><span class="sr-only">Open menu</span></button>
   </header>
-
-  <!-- ------------------------------------------------------------------ -->
-  <div class="furniture" aria-hidden="true">
-    <p class="welcome" id="welcome">
-      <b class="welcome__dots">•••</b>
-      <span class="welcome__text">Welcome to my world</span>
-      <b class="welcome__dots">•••</b>
-    </p>
-
-    <p class="chip chip--artist" id="chipArtist"><span>•Artist Gireesh•</span></p>
-    <p class="chip chip--legend" id="chipLegend"><span>•Legend•</span></p>
-
-    <div class="arrows arrows--l" id="arrowsL"></div>
-    <div class="arrows arrows--r" id="arrowsR"></div>
-    <!-- only the bottom-right grid remains: the top-left one sat under the
-         navigation and fought with it -->
-    <div class="grid-dots grid-dots--br" id="dotsBR"></div>
-  </div>
-
-  <!-- ------------------------------------------------------------------ -->
-  <nav class="menu" id="menu" aria-label="Primary, expanded" hidden>
-    <ul>
-      <li><a href="#" class="is-active" data-nav>Home</a></li>
-      <li><a href="#" data-nav>Work</a></li>
-      <li><a href="#" data-nav>About</a></li>
-      <li><a href="#" data-nav>Journal</a></li>
-      <li><a href="#" data-nav>Contact</a></li>
-    </ul>
-    <p class="menu__tag">••• Welcome to my world •••</p>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="#work">Work</a><a href="#about">About</a><a href="#lab">Lab</a><a href="#contact">Contact</a>
   </nav>
 
-  <!-- ------------------------------------------------------------------ -->
-  <div class="boot" id="boot">
-    <div class="boot__bar"><i id="bootFill"></i></div>
-    <button class="boot__enter" id="bootEnter" hidden>
-      <span>Enter</span>
-    </button>
-  </div>
-
-  <noscript>
-    <div class="fallback">
-      <p>GIREESH</p>
-      <small>This opening is an animated experience. Please enable JavaScript.</small>
-    </div>
-  </noscript>
-</div>
-
-<main class="flow">
-  <!-- the hero above is position:fixed, so this reserves its scroll height -->
-  <div class="hero-spacer" aria-hidden="true"></div>
-
-  <!-- ==================================================================== -->
-  <!-- The creative-universe film itself, played as supplied. All labels and
-       cards are part of the footage; the DOM adds only what a screen reader
-       needs and a veil that breathes over the loop seam. -->
-  <section class="universe" id="universe" aria-labelledby="uniTitle">
-    <header class="universe__title" id="uniTitle">
-      <p class="universe__over">Scene 02</p>
-      <h2 class="universe__name">The Creative<br>Universe</h2>
-      <p class="universe__sub">Tools · Ideas · People · Impact</p>
-    </header>
-    <ul class="sr-only">
-      <li>Figma</li><li>Photoshop</li><li>After Effects</li><li>Premiere Pro</li>
-      <li>Lightroom</li><li>Notion</li><li>Framer</li><li>Webflow</li>
-      <li>Spline</li><li>Claude</li><li>ChatGPT</li><li>Midjourney</li>
-    </ul>
-    <video id="uniFilm" muted playsinline loop preload="metadata"
-           poster="public/media/universe.jpg" aria-hidden="true">
-      <source src="public/media/universe.mp4" type="video/mp4">
-    </video>
-    <div class="universe__veil" id="uniVeil" aria-hidden="true"></div>
-  </section>
-
-  <!-- ==================================================================== -->
-  <section class="chrono" id="chrono" aria-labelledby="chronoTitle">
-    <div class="chrono__pin">
-      <canvas id="chronoStage" aria-hidden="true"></canvas>
-
-      <h2 class="chrono__title" id="chronoTitle">
-        <span>A</span><span>Journey</span><span>Through</span><span>Time</span>
-      </h2>
-      <p class="chrono__rail" aria-hidden="true">
-        <i></i>
-        <span>Ideas</span><span>Experiences</span><span>People</span>
-        <span>Projects</span><span>Me</span>
-        <i></i>
-      </p>
-
-      <p class="chrono__hint" aria-hidden="true">
-        Move<br>to travel<br>through time<i></i>
-      </p>
-      <p class="chrono__note chrono__note--bl" aria-hidden="true">
-        Same<br>curiosity<br>a brighter<br>tomorrow
-      </p>
-      <p class="chrono__note chrono__note--br" aria-hidden="true">
-        Still<br>designing<br>what's<br>next<i></i>
-      </p>
-
-      <div class="chrono__deck" id="chronoDeck"></div>
-
-      <!-- the figure's own layer, stacked over the deck: he stands in front
-           of the timeline, looking at his journey -->
-      <canvas id="chronoFront" aria-hidden="true"></canvas>
-    </div>
-  </section>
-
-  <!-- ==================================================================== -->
-  <section class="gallery" id="gallery" aria-labelledby="galleryTitle">
-    <div class="gallery__pin">
-      <canvas id="galleryStage" aria-hidden="true"></canvas>
-
-      <div class="gallery__world">
-        <div class="gallery__deck" id="galleryDeck"></div>
-        <img class="gallery__person" id="galleryPerson"
-             src="public/projects/person.png" alt="" draggable="false">
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> GEN AI / CREATIVE TECHNOLOGY</p>
+        <h1 id="hero-title"><span>RAVI</span><em>YADAV</em></h1>
+        <p class="hero-intro">I turn ideas into <strong>intelligent visual experiences</strong> — combining generative AI, design, storytelling and code.</p>
+        <div class="hero-actions"><a class="button button-fill" href="#work">Explore the work <span>↘</span></a><a class="text-link" href="#contact">Start a conversation</a></div>
       </div>
+      <div class="hero-meta"><span>IND / 2026</span><span>01 — INTRO</span></div>
+      <div class="orb orb-a" aria-hidden="true"></div><div class="orb orb-b" aria-hidden="true"></div>
+      <div class="scroll-cue" aria-hidden="true"><span></span> SCROLL TO ENTER</div>
+    </section>
 
-      <h2 class="g-label g-label--projects" id="galleryTitle">Projects</h2>
-      <p class="g-label g-label--ideas" aria-hidden="true">
-        Ideas<br>Interfaces<br>Experiences<br><b>Real Impact</b>
-      </p>
-      <p class="g-label g-label--scroll" aria-hidden="true">
-        Scroll<br>Explore<br>Interact
-      </p>
-      <p class="g-label g-label--real" aria-hidden="true">
-        Real<br>Projects<br>Real<br>Stories
-      </p>
-      <p class="g-label g-label--tomorrow" aria-hidden="true">
-        Designing<br>A Brighter<br>Tomorrow
-      </p>
-      <span class="g-label g-label--num" id="galleryNum" aria-hidden="true">01</span>
-    </div>
-  </section>
+    <section class="manifesto section-pad" id="about" aria-labelledby="about-title">
+      <div class="section-kicker"><span>02</span><span>THE APPROACH</span></div>
+      <div class="manifesto-layout">
+        <h2 id="about-title">NOT JUST<br><i>AI.</i><br>A NEW WAY<br>TO MAKE.</h2>
+        <div class="manifesto-copy"><p class="big-copy">The interesting part isn't the model. It's the <u>direction</u> — the decisions, the taste, the story and the last 10% that makes a generated idea feel human.</p><p>I work at the intersection of AI and creative production, exploring how machines can accelerate imagination without flattening the personality behind it.</p><div class="signature">R / Y <span>GEN AI</span></div></div>
+      </div>
+    </section>
 
-</main>
+    <section class="work section-pad" id="work" aria-labelledby="work-title">
+      <div class="section-kicker"><span>03</span><span>SELECTED WORK</span><span>DRAG / HOVER / EXPLORE</span></div>
+      <div class="work-head"><h2 id="work-title">SELECTED<br><i>EXPERIMENTS</i></h2><p>Original concepts built around AI-first workflows, visual storytelling and interactive media.</p></div>
+      <div class="projects">
+        <article class="project project-large" data-tilt><div class="project-art art-01"><span class="art-number">01</span><span class="art-word">SYNTH</span><div class="beam"></div></div><div class="project-info"><span>01 / AI VISUAL SYSTEM</span><h3>SYNTHESIS</h3><p>A visual language for turning rough prompts into a coherent cinematic world.</p><a href="#contact" aria-label="Ask about Synthesis">View concept ↗</a></div></article>
+        <article class="project" data-tilt><div class="project-art art-02"><span class="art-number">02</span><span class="orbit"></span><span class="art-word small">MOTION</span></div><div class="project-info"><span>02 / MOTION + AI</span><h3>FRAME//SHIFT</h3><p>Short-form visual storytelling designed for movement, rhythm and retention.</p><a href="#contact">View concept ↗</a></div></article>
+        <article class="project" data-tilt><div class="project-art art-03"><span class="art-number">03</span><span class="terminal">PROMPT<br>&gt; IMAGINE<br>&gt; BUILD<br>&gt; REPEAT</span></div><div class="project-info"><span>03 / CREATIVE SYSTEM</span><h3>GENESIS LAB</h3><p>Experiments in prompt systems, art direction and repeatable AI production.</p><a href="#lab">Enter the lab ↗</a></div></article>
+      </div>
+    </section>
 
-<!-- ====================================================================== -->
-<footer class="fin" id="fin" aria-label="Closing">
-  <div class="fin__pin">
-  <h2 class="sr-only">Gireesh</h2>
+    <section class="statement" id="lab" aria-labelledby="lab-title"><div class="statement-inner"><p class="eyebrow">04 / THE LAB</p><h2 id="lab-title">CURIOUS<br>BY <i>DEFAULT.</i></h2><div class="lab-lines"><p>GENERATIVE IMAGE</p><p>VIDEO & MOTION</p><p>CREATIVE AUTOMATION</p><p>WEB EXPERIENCES</p><p>STORY SYSTEMS</p></div><p class="lab-note">This space is intentionally alive. New experiments arrive, break, evolve and occasionally become real work.</p></div></section>
 
-  <div class="fin__stage1" id="finStage1">
-    <canvas id="finBack" aria-hidden="true"></canvas>
-    <canvas id="finMan" aria-hidden="true"></canvas>
+    <section class="contact section-pad" id="contact" aria-labelledby="contact-title"><div class="section-kicker"><span>05</span><span>LET'S MAKE SOMETHING</span></div><div class="contact-grid"><h2 id="contact-title">HAVE AN<br><i>IDEA?</i></h2><div><p class="contact-copy">Tell me what you're trying to build. A visual campaign, an AI workflow, a cinematic website or something that doesn't have a name yet.</p><a class="contact-email" href="mailto:hello@raviyadav.dev">hello@raviyadav.dev <span>↗</span></a><div class="socials"><a href="https://github.com/raviyadav81547" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a><a href="#top">Back to top ↑</a></div></div></div></section>
+  </main>
 
-    <p class="f-cap f-cap--tl" aria-hidden="true">
-      Ideas<br>Designs<br>Experiences<br>Real Impact
-    </p>
-    <blockquote class="f-cap f-cap--quote">
-      &ldquo;Good<br>Design<br>Smokes<br>Louder.&rdquo;
-    </blockquote>
-    <p class="f-cap f-cap--blw" aria-hidden="true">A<br>Designer&rsquo;s<br>World</p>
-    <p class="f-cap f-cap--tr" aria-hidden="true">
-      Same<br>Passion<br>A Brighter<br>Tomorrow
-    </p>
-    <p class="f-cap f-cap--br" aria-hidden="true">Design<br>Build<br>Explore<br>Repeat</p>
-  </div>
-
-  <div class="fin__dim" id="finDim" aria-hidden="true"></div>
-
-  <!-- the second frame of the finale: slides in from the left on scroll.
-       Dormant until its image exists (see boot6's candidate list). -->
-  <figure class="fin__frame2" id="finFrame2" aria-hidden="true" hidden>
-    <img id="finFrame2Img" alt="" draggable="false" decoding="async">
-  </figure>
-
-  <div class="fin__bar">
-    <a href="#" data-nav>Contact</a>
-    <nav class="fin__soc" aria-label="Social">
-      <a href="#" rel="me">Instagram</a>
-      <a href="#" rel="me">Behance</a>
-      <a href="#" rel="me">LinkedIn</a>
-    </nav>
-    <small class="fin__c">&copy; 2026 Gireesh &mdash; All rights reserved</small>
-  </div>
-  </div>
-</footer>
-
-<script type="module" src="src/main.js"></script>
+  <footer><span>© 2026 RAVI YADAV</span><span>BUILT WITH CURIOSITY + CODE</span><span>NO TRACKING / NO BLOAT</span></footer>
+  <script type="module" src="src/ravi.js"></script>
 </body>
 </html>
